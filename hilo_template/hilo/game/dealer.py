@@ -1,5 +1,5 @@
 import random
-
+from player import player
 class dealer:
     """
     Dealer generates a random number, sends it to the player.
