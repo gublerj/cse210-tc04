@@ -1,13 +1,14 @@
 import random
-from player import player
+from game.player import player
 class dealer:
     """
     Dealer generates a random number, sends it to the player.
     Dealer determines whether the guess is a win or lose for that round.
     """
     def __init__(self):
+        self.player = player()
+        self.keep_playing = True
         self.count = 0
-        self.player()
         self.card1 = 0
         self.card2 = 0
         self.points = 300
@@ -30,9 +31,11 @@ class dealer:
         """
         Counts points and display total points.
         """
+        if self.count == 0:
+            return self.points
         higher_lower = self.player.higher_lower()
         self.deal_card()
-        if higher_lower == h:
+        if higher_lower == 'h':
             if self.card1 > self.card2:
                 self.points = self.points + 100
             else:
@@ -44,5 +47,17 @@ class dealer:
                 self.points = self.points - 75
         print("Your score is: ", self.points)
         return self.points
+
+    def play_game(self):
+        while self.keep_playing == True:
+            self.deal_card()
+            self.points = self.count_points()
+            if self.points > 1:
+                self.keep_playing = self.player.keep_playing()
+            else:
+                self.keep_playing = False
+            
+
+        
 
             
