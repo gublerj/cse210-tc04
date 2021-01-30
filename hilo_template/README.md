@@ -39,4 +39,4 @@ root                    (project root folder)
 Brandon Perry: per18061@byui.edu
 Logan Moffett: moffettl@byui.edu
 Joshua Gubler: joshjgubler@gmail.com
-Kaushal
+Kaushal Kafle: kaf17001@byui.edu
